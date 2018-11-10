@@ -1,5 +1,61 @@
 # MyReads Project
 
+**Web app bootstrapped with `Create React App`**  
+An Udacity FEND Nanodegree repository. Demonstrate functional app using React approach.
+
+## Project Setup
+
+1. Clone the Project - `git clone https://github.com/rudimusmaximus/FENDp6.git`
+2. Go into the directory where the project now lives - `cd FENDp6`
+3. Install the dependencies - `npm install`
+4. Start the app - `npm start`
+
+## Nvm
+I used nvm to load the LTS versions of Node and it's npm.
+
+`Now using node v10.13.0 (npm v6.4.1)`
+
+# My Notes Completing This
+
+## Important Starting Code Note
+ - Uses starter code from https://github.com/udacity/reactnd-project-myreads-starter  
+ 
+## Lessons learned:  
+
+| Area | Comments |
+| :--- | :--- |
+| 1. TODO | a. TODO. |
+
+## Assumptions required to solve the problem
+The following assumptions were made by evaluating the code and all given instructions:
+ - Domonstrate React thinking approach in section # Design
+
+## Work Flow
+Similar to my 'DevFlow' style in FENDp5.
+
+## Resources used to complete this work
+I read [x](TODO links) 
+I watched [x](TODO links).
+
+## Working Notes
+These possible packages if needed, install from cli
+to see if newer version from contacts excercise
+these would appear in package.json:
+
+```json
+  "dependencies": {
+    "escape-string-regexp": "^1.0.5",
+    "form-serialize": "^0.7.2",
+    "react-router-dom": "^4.1.1",
+    "sort-by": "^1.2.0"
+  },
+```
+# Demonstrate React Approach Design Thinking
+Watch edits to this section across commits to document iteration and design thinking.
+TODO: create outline
+
+# MyReads Project (THIS SECTION FROM STARTER CODE)
+
 This is the starter template for the final assessment project for Udacity's React Fundamentals course. The goal of this template is to save you time by providing a static example of the CSS and HTML markup that may be used, but without any of the React code that is needed to complete the project. If you choose to start with this template, your job will be to add interactivity to the app by refactoring the static code in this template.
 
 Of course, you are free to start this project from scratch if you wish! Just be sure to use [Create React App](https://github.com/facebookincubator/create-react-app) to bootstrap the project.
@@ -89,4 +145,4 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 This repository is the starter code for _all_ Udacity students. Therefore, we most likely will not accept pull requests.
 
-For details, check out [CONTRIBUTING.md](CONTRIBUTING.md).
+For details, check out .github/CONTRIBUTING.md
