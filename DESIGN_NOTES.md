@@ -39,7 +39,7 @@ This section to document `React` thinking style. Outline from demo listed in `RE
 - 'Currently Reading' list of books
 - 'Want to Read' list of books
 - 'Read' list of books
-- Book images and book title and author text
+- Book images, book title, and author text
 - Approved search terms list that works with a given search api
  -->
 ```
@@ -76,15 +76,19 @@ TODO: notes
 ### Step 1. Break down the app into a hierarchy of components. Draw a box around each React component.
 
 - App
-  - AddBook
+  - AddBook (find book)
   - MyBookList
-    - BookControl
+    - Book
+      - BookShelfAssigner
 
 ### Step 2. Determine the data in our app.  
 
 - book title
 - book author
-- current shelf
+- current shelf name
+- shelf 1 list
+- shelf 2 list
+- shelf 3 list
 - future shelf (move to shelf)
 
 ### Step 3. Figure out the data that should be a part of our state:
@@ -98,10 +102,14 @@ TODO: notes
 
 - book title
 - book author
-- current shelf
+- current shelf name
+- current shelf owner (implied, never changes, do we need?)
 
 #### Not state:
 
+- shelf 1 list
+- shelf 2 list
+- shelf 3 list
 - future shelf (move to shelf)
 
 ### Step 4. Identify where each piece of state lives.
@@ -113,29 +121,17 @@ If you can’t find a component where it makes sense to own the state, create
 a new component simply for holding the state and add it somewhere in the
 hierarchy above the common owner component.  
 
-"EXAMPLE
-users:
+**Candidate Components**
+c - App (a list of books is needed by both the MyBookList and the AddBook components, so lifting state to higher parent which is App OR new BookUniverse?)
+c    - Book (a single book)
+        - book title
+        - book author
+        - current shelf name
+c      - BookShelfAssigner (changes shelf)
 
-- UserList (renders users)
-- AddUser (to see if it already exists)
-- In order for both to access users => lift up state to their parent-most component: App component
-
-new first name, new last name, new username
-
-- AddUser
-- We need a single source of truth => form is a controlled component
-
-userExists
-
-- AddUser
-- We need a single source of truth => form is a controlled component
-
-showGamesPlayed
-
-- UserList
-- User
-- => Store it in UserList
-"  
+c  - AddBook (find book among All Books)
+c    - BookExists (list the hits)
+c  - MyBookList (main home page to show My Books)
 
 ### Step 5. Add Inverse Data Flow.
 
