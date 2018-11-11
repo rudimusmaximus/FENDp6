@@ -24,18 +24,25 @@ I used nvm to load the LTS versions of Node and it's npm.
 
 | Area | Comments |
 | :--- | :--- |
-| 1. TODO | a. TODO. |
+| 1. eslint issue revealed with <br>`cli$ npm ls eslint` <br>Prevents npm start | a. <img width="322" alt="screen shot 2018-11-10 at 12 17 23 pm" src="https://user-images.githubusercontent.com/21182598/48307609-3077d100-e516-11e8-8c3a-c0fa8dd09af9.png"><br>b. The above conflict results when manually installing eslint and the react plug in for it as follows: <br> `npm install eslint --save-dev`<br>`npm install eslint-plugin-react --save-dev`<br>c. Fix with remove node directories and package-lock.json AND eslint 5.9.0 from devDependencies in package.json<br>`rm package-lock.jsaon`<br>`rm -rf node_modules`<br>`npm uninstall -save eslint` <br>d. prefere local npm installations, watch for conflicts of other script version requirements|
+| 2. TODO | a. TODO. |
 
 ## Assumptions required to solve the problem
-The following assumptions were made by evaluating the code and all given instructions:
- - Domonstrate React thinking approach in section # Design
-
+The following assumptions were made by evaluating the code and all given instructions (per overview):
+ - Demonstrate React thinking approach in markdown file DESIGN_NOTES.md
+ - Starter code has all CSS and HTML, but omits the React code; it is a static HTML page of the finished app without interactive functionality
+ - Reviewer will have npm installed on their machine
+ - Focus on functional React code
+ - Required to make use of the `booksAPI.js` file that comes with the starter template to interact with the backend API. It's methods are descripted in the starter portion of the README.md  
+ 
 ## Work Flow
-Similar to my 'DevFlow' style in FENDp5.
+Similar to my 'DevFlow' style in FENDp5 - issue labels and template, .eslintrc, .editorconfig, GIT FLOW, Atom, and GitKraken with repo hosted on GitHub.
 
 ## Resources used to complete this work
 I read [x](TODO links) 
-I watched [x](TODO links).
+I watched [x](TODO links)  
+- I watched [react approach]()
+
 
 ## Working Notes
 These possible packages if needed, install from cli
@@ -51,8 +58,7 @@ these would appear in package.json:
   },
 ```
 # Demonstrate React Approach Design Thinking
-Watch edits to this section across commits to document iteration and design thinking.
-TODO: create outline
+Watch edits to `DESIGN_NOTES.md` across commits to document my iteration and design thinking.
 
 # MyReads Project (THIS SECTION FROM STARTER CODE)
 
