@@ -3,6 +3,7 @@
 From the course Project Overview, we create a bookshelf app that fulfills the [Project Rubric](https://review.udacity.com/#!/rubrics/918/view) See also, #2 [...FENDp6/issues/2](https://github.com/rudimusmaximus/FENDp6/issues/2)
 
 # Given Design (from course materials)
+TODO: add notes from course to demonstrate interpretation in next section.
 
 # DESIGN_NOTES
 This section to document `React` thinking style. Outline from demo listed in `README.md`  
