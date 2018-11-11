@@ -76,10 +76,11 @@ TODO: notes
 ### Step 1. Break down the app into a hierarchy of components. Draw a box around each React component.
 
 - App
-  - AddBook (find book)
-  - MyBookList
-    - Book
-      - BookShelfAssigner
+  - BookCase (MyBookList)
+    - BookShelf
+      - Book
+        - BookShelfAssigner (Changer)
+  - Search (AddBook, find book)
 
 ### Step 2. Determine the data in our app.  
 
@@ -102,7 +103,7 @@ TODO: notes
 
 - book title
 - book author
-- current shelf name
+- current shelf name (default)
 - current shelf owner (implied, never changes, do we need?)
 
 #### Not state:
@@ -122,16 +123,16 @@ a new component simply for holding the state and add it somewhere in the
 hierarchy above the common owner component.  
 
 **Candidate Components**
-c - App (a list of books is needed by both the MyBookList and the AddBook components, so lifting state to higher parent which is App OR new BookUniverse?)
-c    - Book (a single book)
-        - book title
-        - book author
-        - current shelf name
-c      - BookShelfAssigner (changes shelf)
-
-c  - AddBook (find book among All Books)
-c    - BookExists (list the hits)
-c  - MyBookList (main home page to show My Books)
+- App c - App (a list of books is needed by both the MyBookList and the AddBook components, so lifting state to higher parent which is App OR new BookUniverse?)
+  - BookCase (MyBookList) c - BookCase (MyBookList, main home page to show My Books)
+    - BookShelf c - BookShelf
+      - current shelf name (default)
+      - Book c - Book (a single book)
+          - book title
+          - book author
+        - BookShelfAssigner (Changer) c - BookShelfAssigner (changes shelf)
+  - Search (AddBook, find book) c - Search (AddBook, find book among All Books)
+    - BookExists c? - (list the hits)
 
 ### Step 5. Add Inverse Data Flow.
 

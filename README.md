@@ -40,14 +40,14 @@ The following assumptions were made by evaluating the code and all given instruc
 Similar to my 'DevFlow' style in FENDp5 - issue labels and template, .eslintrc, .editorconfig, GIT FLOW, Atom, and GitKraken with repo hosted on GitHub.
 
 ## Resources used to complete this work
-I read [x](TODO links) 
-I watched [x](TODO links)  
-- I watched [react approach]()
-
+I read:
+ - [x](TODO links) 
+I watched:
+ - [My Reads / React Zoom Study Session w/ Doug Brown](https://www.youtube.com/watch?v=OcL7-7cRpkQ&t=373s)  
 
 ## Working Notes
 These possible packages if needed, install from cli
-to see if newer version from contacts excercise
+to see if newer version from contacts exercise
 these would appear in package.json:
 
 ```json
