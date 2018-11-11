@@ -34,6 +34,7 @@ The following assumptions were made by evaluating the code and all given instruc
  - Reviewer will have npm installed on their machine
  - Focus on functional React code
  - Required to make use of the `booksAPI.js` file that comes with the starter template to interact with the backend API. It's methods are descripted in the starter portion of the README.md  
+ - Avoid using `.jsx` extension; stick with `.js`
  
 ## Work Flow
 Similar to my 'DevFlow' style in FENDp5 - issue labels and template, .eslintrc, .editorconfig, GIT FLOW, Atom, and GitKraken with repo hosted on GitHub.

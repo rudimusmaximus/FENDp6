@@ -3,16 +3,44 @@
 From the course Project Overview, we create a bookshelf app that fulfills the [Project Rubric](https://review.udacity.com/#!/rubrics/918/view) See also, #2 [...FENDp6/issues/2](https://github.com/rudimusmaximus/FENDp6/issues/2)
 
 # Given Design (from course materials)
-TODO: add notes from course to demonstrate interpretation in next section.
+Direct from course so we can demonstrate interpretation in next section "DESIGN_NOTES".
+
+## App Functionality
+In this application, the main page displays a list of "shelves" (i.e. categories), each of which contains a number of books. The three shelves are:
+ - Currently Reading
+ - Want to Read
+ - Read
+
+ <img width="665" alt="screen shot 2018-11-10 at 10 54 00 pm" src="https://user-images.githubusercontent.com/21182598/48309260-932f9380-e53b-11e8-9afa-b0b691d1dcc0.png">
+
+Each book has a control that lets you select the shelf for that book. When you select a different shelf, the book moves there. Note that the default value for the control should always be the current shelf the book is in.
+
+<img width="273" alt="screen shot 2018-11-10 at 10 52 37 pm" src="https://user-images.githubusercontent.com/21182598/48309251-67aca900-e53b-11e8-81b9-748a1e367d77.png">
+
+The main page also has a link to /search, a search page that allows you to find books to add to your library.
+
+The search page has a text input that may be used to find books. As the value of the text input changes, the books that match that query are displayed on the page, along with a control that lets you add the book to your library. To keep the interface consistent, you may consider re-using some of the code you used to display the books on the main page.
+
+<img width="664" alt="screen shot 2018-11-10 at 10 58 08 pm" src="https://user-images.githubusercontent.com/21182598/48309319-ff5ec700-e53c-11e8-8321-371537633503.png">
+
+When a book is on a bookshelf, it should have the same state on both the main application page and the search page.
+
+The search page also has a link to / (the root URL), which leads back to the main page.
+
+When you navigate back to the main page from the search page, you should instantly see all of the selections you made on the search page in your library.
 
 # DESIGN_NOTES
 This section to document `React` thinking style. Outline from demo listed in `README.md`  
 
-**Task**: Create a React app that lets us TODO: interpret given design
+**Task**: Create a React app that lets us manage a three shelf list of books.
 
 ```
 <!-- info:
-- TODO
+- 'Currently Reading' list of books
+- 'Want to Read' list of books
+- 'Read' list of books
+- Book images and book title and author text
+- Approved search terms list that works with a given search api
  -->
 ```
 
@@ -20,14 +48,17 @@ TODO: notes
 
 ```
 <!-- caveats, restrictions, validations:
-- TODO
+- shelves reflect search activity immediately
  -->
 ```
 TODO: notes
 
 ```
 <!-- Key Interaction:
-- TODO
+- you can go back to main from search page
+- you can go to a search page from the main page
+- Each book has a control that lets you select the shelf for that book
+- you can use control anywhere you see a book and the default value shown by the control when used should always be the current shelf the book is in
  -->
 ```
 
@@ -43,24 +74,18 @@ TODO: notes
 
 ## Design Note Steps
 ### Step 1. Break down the app into a hierarchy of components. Draw a box around each React component.
-"EXAMPLE
+
 - App
-  - AddUser
-  - UserList
-    - User
-"
+  - AddBook
+  - MyBookList
+    - BookControl
 
 ### Step 2. Determine the data in our app.  
-"EXAMPLE
-- new first name
-- new last name
-- new username
-- userExists (for error message)
-- users
-- username
-- showGamesPlayed
-- numGamesPlayed
-"  
+
+- book title
+- book author
+- current shelf
+- future shelf (move to shelf)
 
 ### Step 3. Figure out the data that should be a part of our state:
 
@@ -71,18 +96,13 @@ TODO: notes
 
 #### State:
 
-"EXAMPLE
-- new first name, new last name, new username
-- users
-- userExists
-- showGamesPlayed
-"  
+- book title
+- book author
+- current shelf
 
 #### Not state:
-"EXAMPLE
-- username
-- numGamesPlayed
-"
+
+- future shelf (move to shelf)
 
 ### Step 4. Identify where each piece of state lives.
 
