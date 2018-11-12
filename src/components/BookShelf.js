@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 // import * as BooksAPI from './BooksAPI'
-import Book from './Book'
+import Book from './Book';
 
 class BookShelf extends Component {
   state = {}
@@ -26,8 +26,8 @@ class BookShelf extends Component {
                   </ol>
               </div>
           </div>
-      )
+      );
   }
 }
 
-export default BookShelf
+export default BookShelf;
