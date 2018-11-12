@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 
 class Changer extends Component {
   state = {
-      shelfSelection: this.props.book.shelf || 'none'
+      // shelfSelection: this.props.book.shelf || 'none'
   }
 
   onChangeShelf = (book, shelf) => {

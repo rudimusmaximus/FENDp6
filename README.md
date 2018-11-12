@@ -27,6 +27,8 @@ I used nvm to load the LTS versions of Node and it's npm.
 | 1. eslint issue revealed with <br>`cli$ npm ls eslint` <br>Prevents npm start | a. <img width="322" alt="screen shot 2018-11-10 at 12 17 23 pm" src="https://user-images.githubusercontent.com/21182598/48307609-3077d100-e516-11e8-8c3a-c0fa8dd09af9.png"><br>b. The above conflict results when manually installing eslint and the react plug in for it as follows: <br> `npm install eslint --save-dev`<br>`npm install eslint-plugin-react --save-dev`<br>c. Fix with remove node directories and package-lock.json AND eslint 5.9.0 from devDependencies in package.json<br>`rm package-lock.json`<br>`rm -rf node_modules`<br>`npm uninstall -save eslint` <br>d. prefere local npm installations, watch for conflicts of other script version requirements|
 | 2. Importing using ES6 modules | a. Becuase React uses webpack (a module bundler), we can use modules from npm installed libraries as follows. <br>`$ npm install --save react-router-dom`<br> and in the code<br>`import { BrowserRouter, Route, Link } from 'react-router-dom'`.<br>b. further reading:<br>[Why babel and webpack with React](https://stackoverflow.com/questions/43175140/why-does-react-require-babel-and-webpack-to-work)<br>[When and Why to Use webpack](https://blog.andrewray.me/webpack-when-to-use-and-why/) |
 | 3. Installing peer dependencies | a. read about history and why you can't do this automatically [stackoverflow](https://stackoverflow.com/questions/35207380/how-to-install-npm-peer-dependencies-automatically)<br>b. solution is to take error<br>`warning: npm WARN ajv-keywords@3.2.0 requires a peer of ajv@^6.0.0 but none is installed. You must install peer dependencies yourself.`<br> edit your package.json for each of these warnings<br>` "ajv":"^6.0.0" `<br>remove local node modules and package lock<br>`rm package-lock.json`<br>`rm -rf node_modules`<br>`npm install`|
+|4. prevent usage of deprecated methods |a. research this as we had to change `componentWillReceiveProps`<br>to<br>`UNSAFE_componentWillReceiveProps`<br>b. TODO: document best practice for future projects. |  
+
 ## Assumptions required to solve the problem
 The following assumptions were made by evaluating the code and all given instructions (per overview):
  - Demonstrate React thinking approach in markdown file DESIGN_NOTES.md
@@ -43,7 +45,9 @@ Similar to my 'DevFlow' style in FENDp5 - issue labels and template, .eslintrc, 
 I read:
  - [x](TODO links) 
 I watched:
- - [My Reads / React Zoom Study Session w/ Doug Brown](https://www.youtube.com/watch?v=OcL7-7cRpkQ&t=373s)  
+ - [My Reads / React Zoom Study Session w/ Doug Brown](https://www.youtube.com/watch?v=OcL7-7cRpkQ&t=373s)
+ - [React Router training](https://reacttraining.com/react-router/)  
+ 
 
 ## Working Notes
 These possible packages if needed, install from cli
@@ -52,12 +56,13 @@ these would appear in package.json:
 
 ```json
   "dependencies": {
-    "escape-string-regexp": "^1.0.5",
-    "form-serialize": "^0.7.2",
+    "escape-string-regexp": "^1.0.5", [not used this time]
+    "form-serialize": "^0.7.2",[not used this time]
     "react-router-dom": "^4.1.1",
-    "sort-by": "^1.2.0"
+    "sort-by": "^1.2.0"[not used this time]
   },
 ```
+
 # Demonstrate React Approach Design Thinking
 Watch edits to `DESIGN_NOTES.md` across commits to document my iteration and design thinking.
 
