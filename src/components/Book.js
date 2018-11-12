@@ -1,6 +1,6 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 // import * as BooksAPI from './BooksAPI'
-import Changer from './Changer'
+import Changer from './Changer';
 
 class Book extends Component {
   state = {
@@ -40,8 +40,8 @@ class Book extends Component {
               <div className="book-title">{this.props.book.title}</div>
               <div className="book-authors">{authors}</div>
           </div>
-      )
+      );
   }
 }
 
-export default Book
+export default Book;

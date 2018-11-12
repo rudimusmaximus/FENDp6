@@ -1,9 +1,10 @@
-import React from 'react'
-import * as BooksAPI from './BooksAPI'
-import * as BookUtils from './BookUtils'
-
-import './App.css'
-import BookCase from './components/BookCase'
+import React from 'react';
+import { Route } from 'react-router-dom';
+import * as BooksAPI from './BooksAPI';
+import * as BookUtils from './BookUtils';
+import './App.css';
+import BookCase from './components/BookCase';
+import Search from './components/Search';
 
 class BooksApp extends React.Component {
   state = {
@@ -28,8 +29,8 @@ class BooksApp extends React.Component {
               this.setState({
                   books: BookUtils.sortAllBooks(list),
                   newBook: false
-              })
-          })
+              });
+          });
   }
 
   changeShelf = (book, shelf) => {
@@ -53,17 +54,35 @@ class BooksApp extends React.Component {
                   newList = BookUtils.sortAllBooks(newList);
               }
               this.setState({books: newList});
-          })
+          });
   }
 
   render() {
       return (
-          <BookCase
-              books={this.state.books}
-              onRefreshAllBooks= {this.refreshAllBooks}
-              onChangeShelf={this.changeShelf}
-          />)
+          <div className="app">
+              <Route
+                  path='/'
+                  render={() => (
+                      <BookCase
+                          books={this.state.books}
+                          onRefreshAllBooks= {this.refreshAllBooks}
+                          onChangeShelf={this.changeShelf}
+                      />
+                  )}
+              />
+
+              <Route
+                  path='/search'
+                  render={() => (
+                      <Search
+                          myBooks={this.state.books}
+                          onChangeShelf={this.changeShelf}
+                      />
+                  )}
+              />
+          </div>
+      );
   }
 }
 
-export default BooksApp
+export default BooksApp;

@@ -1,4 +1,4 @@
-import React, {Component} from 'react'
+import React, {Component} from 'react';
 
 class Changer extends Component {
   state = {
@@ -33,7 +33,7 @@ class Changer extends Component {
                   <option value="none">None</option>
               </select>
           </div>
-      )
+      );
   }
 }
-export default Changer
+export default Changer;
