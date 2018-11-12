@@ -3,21 +3,28 @@ import React, {Component} from 'react'
 import Book from './Book'
 
 class BookShelf extends Component {
-  state = {
-
-  }
+  state = {}
 
   render(){
       return (
           <div className="bookshelf">
-              <h2 className="bookshelf-title">To be named</h2>
+              <h2 className="bookshelf-title">{this.props.shelf.name}</h2>
               <div className="bookshelf-books">
                   <ol className="books-grid">
-                      <Book />
+                      {this
+                          .props
+                          .shelf
+                          .books
+                          .map(book => (
+                              <li key={book.id}>
+                                  <Book book={book} />
+                              </li>
+                          ))}
                   </ol>
               </div>
           </div>
       )
   }
 }
+
 export default BookShelf
