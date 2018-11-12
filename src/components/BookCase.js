@@ -51,16 +51,17 @@ class BookCase extends Component {
                   <div className="list-books-content">
                       <div>
                           <div>
-                              {shelves && shelves.map((shelf) =>
-                                  (<BookShelf key={shelf.name} shelf={shelf}/>)
+                              {shelves && shelves.map((shelf) =>(
+                                  <BookShelf key={shelf.name} shelf={shelf}
+                                      onChangeShelf={this.props.onChangeShelf}
+                                  />)
                               )}
                           </div>
                       </div>
                   </div>
                   <div className="open-search">
-                      <a onClick={() => this.setState({
-                          showSearchPage: true
-                      })}
+                      <a onClick={() =>
+                          this.setState({showSearchPage: true})}
                       >Add a book</a>
                   </div>
               </div>
