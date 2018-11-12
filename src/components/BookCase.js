@@ -47,7 +47,7 @@ class BookCase extends Component {
           <div className="app">
               <div className="list-books">
                   <div className="list-books-title">
-                      <h1>MyReads</h1>
+                      <h1 aria-label="Home" tabIndex="0">MyReads</h1>
                   </div>
                   <div className="list-books-content">
                       <div>
